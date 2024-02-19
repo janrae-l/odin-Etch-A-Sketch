@@ -1,5 +1,13 @@
 .childDiv {
-  height: 25px;
-  width: 25px;
+  height: 60px;
+  width: 60px;
   border: 1px solid black;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 150px;
 }
