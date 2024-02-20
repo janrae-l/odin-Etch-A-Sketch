@@ -38,6 +38,7 @@ function makeGrid(number) {
     });
   });
 }
+
 console.log(childDiv.classList.contains("hover"));
 sidesPrompt.addEventListener("click", function () {
   let numSides = 0;
@@ -46,17 +47,8 @@ sidesPrompt.addEventListener("click", function () {
   } while (numSides >= 100);
   container.textContent = "";
   makeGrid(numSides);
-  /*const tileSides = 960 / numSides;
-  for (let i = 0; i < numSides * numSides; i++) {
-    childDiv = document.createElement("div");
-    childDiv.classList.add("childDiv");
-    childDiv.classList.add("hover");
-    childDiv.style.height = `${tileSides}px`;
-    childDiv.style.width = `${tileSides}px`;
-
-    container.appendChild(childDiv);
-  }*/
 });
+
 hoverColor = document.querySelectorAll(".hover");
 hoverColor.forEach((tileChild) => {
   tileChild.addEventListener("mouseenter", () => {
@@ -73,23 +65,3 @@ hoverColor.forEach((tileChild) => {
     tileChild.style.background = "white";
   });
 });
-/*
-hoverColor.addEventListener("mouseenter", function () {
-  // let randomColor = Math.floor(Math.random() * 255);
-  hoverColor.style.background = "black"; //`rgb(${randomColor}, ${randomColor}, ${randomColor})`;
-});
-
-hoverColor.addEventListener("mouseleave", function () {
-  hoverColor.style.background = "white";
-});
-
-for (let i = 0; i <= hoverColor.length; i++) {
-  hoverColor[i].addEventListener("mouseenter", function () {
-    // let randomColor = Math.floor(Math.random() * 255);
-    hoverColor[i].style.background = "black"; //`rgb(${randomColor}, ${randomColor}, ${randomColor})`;
-  });
-
-  hoverColor[i].addEventListener("mouseleave", function () {
-    hoverColor[i].style.background = "white";
-  });
-}*/
