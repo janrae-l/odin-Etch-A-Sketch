@@ -9,7 +9,7 @@ for (let i = 0; i < 256; i++) {
   childDiv.classList.add("hover");
   container.appendChild(childDiv);
 }
-const hoverColor = document.querySelectorAll("hover");
+const hoverColor = document.querySelectorAll(".hover");
 /*function makeGrid(number) {
   const tileSides = 960 / number;
   for (let i = 0; i < number * number; i++) {
@@ -34,12 +34,17 @@ sidesPrompt.addEventListener("click", function () {
 
 hoverColor.forEach((tileChild) => {
   tileChild.addEventListener("mouseenter", () => {
+    let rColor = Math.floor(Math.random() * 255);
+    let gColor = Math.floor(Math.random() * 255);
+    let bColor = Math.floor(Math.random() * 255);
     // let randomColor = Math.floor(Math.random() * 255);
-    tileChild.style.color = "black"; //`rgb(${randomColor}, ${randomColor}, ${randomColor})`;
+    console.log("Enter");
+    tileChild.style.background = `rgb(${rColor}, ${gColor}, ${bColor})`;
   });
 
   tileChild.addEventListener("mouseleave", () => {
-    tileChild.style.color = "white";
+    console.log("Out");
+    tileChild.style.background = "white";
   });
 });
 /*
