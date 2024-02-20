@@ -11,7 +11,7 @@
   padding: 0;
 }
 .childDiv:hover {
-  background-color: yellow;
+  background-color: black;
 }
 .container {
   display: flex;
