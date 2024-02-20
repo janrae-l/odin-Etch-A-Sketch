@@ -8,7 +8,7 @@ for (let i = 0; i < 256; i++) {
 }
 
 function makeGrid(number) {
-  const tileSides = 960 / (number * number);
+  const tileSides = 960 / number;
   for (let i = 0; i < number * number; i++) {
     childDiv = document.createElement("div");
     childDiv.classList.add("childDiv");
@@ -20,6 +20,10 @@ function makeGrid(number) {
 }
 
 sidesPrompt.addEventListener("click", function () {
-  const numSides = +prompt("How many squares per side? Max of 100");
+  let numSides = 0;
+  do {
+    numSides = +prompt("How many squares per side? Max of 100");
+  } while (numSides >= 100);
+  container.textContent = "";
   makeGrid(numSides);
 });
