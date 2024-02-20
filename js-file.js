@@ -9,7 +9,7 @@ for (let i = 0; i < 256; i++) {
   childDiv.classList.add("hover");
   container.appendChild(childDiv);
 }
-const hoverColor = document.querySelector(".hover");
+const hoverColor = document.querySelectorAll("hover");
 /*function makeGrid(number) {
   const tileSides = 960 / number;
   for (let i = 0; i < number * number; i++) {
@@ -33,13 +33,13 @@ sidesPrompt.addEventListener("click", function () {
 });
 
 hoverColor.forEach((tileChild) => {
-  tileChild.addEventListener("mouseenter", function () {
+  tileChild.addEventListener("mouseenter", () => {
     // let randomColor = Math.floor(Math.random() * 255);
-    hoverColor.style.background = "black"; //`rgb(${randomColor}, ${randomColor}, ${randomColor})`;
+    tileChild.style.color = "black"; //`rgb(${randomColor}, ${randomColor}, ${randomColor})`;
   });
 
-  tileChild.addEventListener("mouseleave", function () {
-    hoverColor.style.background = "white";
+  tileChild.addEventListener("mouseleave", () => {
+    tileChild.style.color = "white";
   });
 });
 /*
@@ -50,4 +50,15 @@ hoverColor.addEventListener("mouseenter", function () {
 
 hoverColor.addEventListener("mouseleave", function () {
   hoverColor.style.background = "white";
-});*/
+});
+
+for (let i = 0; i <= hoverColor.length; i++) {
+  hoverColor[i].addEventListener("mouseenter", function () {
+    // let randomColor = Math.floor(Math.random() * 255);
+    hoverColor[i].style.background = "black"; //`rgb(${randomColor}, ${randomColor}, ${randomColor})`;
+  });
+
+  hoverColor[i].addEventListener("mouseleave", function () {
+    hoverColor[i].style.background = "white";
+  });
+}*/
