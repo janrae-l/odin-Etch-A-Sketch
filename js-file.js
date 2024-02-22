@@ -2,6 +2,8 @@ const container = document.querySelector(".container");
 const sidesPrompt = document.querySelector(".numPrompt");
 
 let childDiv = document.createElement("div");
+let interaction = 0;
+let colorRange = 255;
 
 for (let i = 0; i < 256; i++) {
   childDiv = document.createElement("div");
@@ -65,3 +67,39 @@ hoverColor.forEach((tileChild) => {
     tileChild.style.background = "white";
   });
 });
+
+function darkenColor() {
+  switch (interaction) {
+    case 1:
+      colorRange = 229.5;
+      break;
+    case 2:
+      colorRange = 204;
+      break;
+    case 3:
+      colorRange = 178.5;
+      break;
+    case 4:
+      colorRange = 153;
+      break;
+    case 5:
+      colorRange = 127.5;
+      break;
+    case 6:
+      colorRange = 102;
+      break;
+    case 7:
+      colorRange = 76.5;
+      break;
+    case 8:
+      colorRange = 51;
+      break;
+    case 9:
+      colorRange = 25.5;
+      break;
+    case 10:
+      colorRange = 0;
+      break;
+  }
+  return colorRange;
+}
