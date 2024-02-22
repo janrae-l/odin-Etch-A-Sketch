@@ -1,9 +1,20 @@
 const container = document.querySelector(".container");
 const sidesPrompt = document.querySelector(".numPrompt");
+const body = document.querySelector("body");
 
 let childDiv = document.createElement("div");
 let interaction = 0;
 let colorRange = 255;
+let randBtnClicks = 0;
+
+const randColorBtn = document.createElement("button");
+randColorBtn.classList.add("randomColor");
+body.appendChild(randColorBtn);
+
+randColorBtn.addEventListener("click", function () {
+  randBtnClicks++;
+  console.log(randBtnClicks);
+});
 
 for (let i = 0; i < 256; i++) {
   childDiv = document.createElement("div");
