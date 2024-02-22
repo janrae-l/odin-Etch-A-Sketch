@@ -1,6 +1,6 @@
 const container = document.querySelector(".container");
 const sidesPrompt = document.querySelector(".numPrompt");
-const body = document.querySelector("body");
+const btnContainer = document.querySelector(".button");
 
 let childDiv = document.createElement("div");
 let interaction = 0;
@@ -8,12 +8,19 @@ let colorRange = 255;
 let randBtnClicks = 0;
 
 const randColorBtn = document.createElement("button");
+randColorBtn.setAttribute("type", "button");
 randColorBtn.classList.add("randomColor");
-body.appendChild(randColorBtn);
+randColorBtn.textContent = "Random Color";
+btnContainer.appendChild(randColorBtn);
 
 randColorBtn.addEventListener("click", function () {
   randBtnClicks++;
   console.log(randBtnClicks);
+  if (randBtnClicks % 2 === 0) {
+    console.log(false);
+  } else {
+    console.log(true);
+  }
 });
 
 for (let i = 0; i < 256; i++) {
