@@ -23,24 +23,14 @@ randColorBtn.addEventListener("click", function () {
   }
 });
 
-for (let i = 0; i < 256; i++) {
+/*for (let i = 0; i < 256; i++) {
   childDiv = document.createElement("div");
   childDiv.classList.add("childDiv");
   childDiv.classList.add("hover");
   container.appendChild(childDiv);
-}
+}*/
 
-function makeGrid(number) {
-  const tileSides = 960 / number;
-  for (let i = 0; i < number * number; i++) {
-    childDiv = document.createElement("div");
-    childDiv.classList.add("childDiv");
-    childDiv.classList.add("hover");
-    childDiv.style.height = `${tileSides}px`;
-    childDiv.style.width = `${tileSides}px`;
-
-    container.appendChild(childDiv);
-  }
+function hoverFunc() {
   let hoverColor = document.querySelectorAll(".hover");
   hoverColor.forEach((tileChild) => {
     tileChild.addEventListener("mouseenter", () => {
@@ -59,6 +49,21 @@ function makeGrid(number) {
   });
 }
 
+function makeGrid(number) {
+  const tileSides = 960 / number;
+  for (let i = 0; i < number * number; i++) {
+    childDiv = document.createElement("div");
+    childDiv.classList.add("childDiv");
+    childDiv.classList.add("hover");
+    childDiv.style.height = `${tileSides}px`;
+    childDiv.style.width = `${tileSides}px`;
+
+    container.appendChild(childDiv);
+  }
+  hoverFunc();
+}
+makeGrid(16);
+
 console.log(childDiv.classList.contains("hover"));
 sidesPrompt.addEventListener("click", function () {
   let numSides = 0;
@@ -69,7 +74,7 @@ sidesPrompt.addEventListener("click", function () {
   makeGrid(numSides);
 });
 
-hoverColor = document.querySelectorAll(".hover");
+/*hoverColor = document.querySelectorAll(".hover");
 hoverColor.forEach((tileChild) => {
   tileChild.addEventListener("mouseenter", () => {
     let rColor = Math.floor(Math.random() * 255);
@@ -85,7 +90,7 @@ hoverColor.forEach((tileChild) => {
     tileChild.style.background = "white";
   });
 });
-
+*/
 function darkenColor() {
   switch (interaction) {
     case 1:
