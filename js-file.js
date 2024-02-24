@@ -5,18 +5,18 @@ const btnContainer = document.querySelector(".button");
 let childDiv = document.createElement("div");
 let interaction = 0;
 let colorRange = 255;
-let randBtnClicks = 0;
+let darkBtnClicks = 0;
 
-const randColorBtn = document.createElement("button");
-randColorBtn.setAttribute("type", "button");
-randColorBtn.classList.add("randomColor");
-randColorBtn.textContent = "Random Color";
-btnContainer.appendChild(randColorBtn);
+const darkColorBtn = document.createElement("button");
+darkColorBtn.setAttribute("type", "button");
+darkColorBtn.classList.add("darkColor");
+darkColorBtn.textContent = "Darken Color";
+btnContainer.appendChild(darkColorBtn);
 
-randColorBtn.addEventListener("click", function () {
-  randBtnClicks++;
-  console.log(randBtnClicks);
-  if (randBtnClicks % 2 === 0) {
+darkColorBtn.addEventListener("click", function () {
+  darkBtnClicks++;
+  console.log(darkBtnClicks);
+  if (darkBtnClicks % 2 === 0) {
     console.log(false);
   } else {
     console.log(true);
@@ -30,6 +30,12 @@ randColorBtn.addEventListener("click", function () {
   container.appendChild(childDiv);
 }*/
 
+function progDarkColor() {
+  darkColorBtn.addEventListener("click", function () {
+    tileChild.style.background = `rgb(${darkenColor()}, ${darkenColor()}, ${darkenColor()})`;
+  });
+}
+
 function hoverFunc() {
   let hoverColor = document.querySelectorAll(".hover");
   hoverColor.forEach((tileChild) => {
@@ -39,7 +45,13 @@ function hoverFunc() {
       let bColor = Math.floor(Math.random() * 255);
       console.log("IN");
 
-      tileChild.style.background = `rgb(${rColor}, ${gColor}, ${bColor})`;
+      if (darkBtnClicks % 2 === 0) {
+        tileChild.style.background = `rgb(${rColor}, ${gColor}, ${bColor})`;
+      } else {
+        interaction = 0;
+        interaction++;
+        tileChild.style.background = `rgb(${darkenColor()}, ${darkenColor()}, ${darkenColor()})`;
+      }
     });
 
     tileChild.addEventListener("mouseleave", () => {
