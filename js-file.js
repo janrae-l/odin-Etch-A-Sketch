@@ -23,13 +23,6 @@ darkColorBtn.addEventListener("click", function () {
   }
 });
 
-/*for (let i = 0; i < 256; i++) {
-  childDiv = document.createElement("div");
-  childDiv.classList.add("childDiv");
-  childDiv.classList.add("hover");
-  container.appendChild(childDiv);
-}*/
-
 function progDarkColor() {
   darkColorBtn.addEventListener("click", function () {
     tileChild.style.background = `rgb(${darkenColor()}, ${darkenColor()}, ${darkenColor()})`;
@@ -91,23 +84,6 @@ sidesPrompt.addEventListener("click", function () {
   makeGrid(numSides);
 });
 
-/*hoverColor = document.querySelectorAll(".hover");
-hoverColor.forEach((tileChild) => {
-  tileChild.addEventListener("mouseenter", () => {
-    let rColor = Math.floor(Math.random() * 255);
-    let gColor = Math.floor(Math.random() * 255);
-    let bColor = Math.floor(Math.random() * 255);
-    console.log("IN");
-
-    tileChild.style.background = `rgb(${rColor}, ${gColor}, ${bColor})`;
-  });
-
-  tileChild.addEventListener("mouseleave", () => {
-    console.log("OUT");
-    tileChild.style.background = "white";
-  });
-});
-*/
 function darkenColor() {
   switch (interaction) {
     case 0:
