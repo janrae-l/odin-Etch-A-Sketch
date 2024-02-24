@@ -49,8 +49,13 @@ function hoverFunc() {
         interaction = 0;
         tileChild.style.background = `rgb(${rColor}, ${gColor}, ${bColor})`;
       } else {
+        rColor = Math.floor(Math.random() * darkenColor());
+        gColor = Math.floor(Math.random() * darkenColor());
+        bColor = Math.floor(Math.random() * darkenColor());
+        console.log(interaction, rColor, gColor, bColor);
+
         interaction++;
-        tileChild.style.background = `rgb(${darkenColor()}, ${darkenColor()}, ${darkenColor()})`;
+        tileChild.style.background = `rgb(${rColor}, ${gColor}, ${bColor})`;
       }
     });
 
@@ -105,8 +110,11 @@ hoverColor.forEach((tileChild) => {
 */
 function darkenColor() {
   switch (interaction) {
+    case 0:
+      colorRange = 225;
+      break;
     case 1:
-      colorRange = 229.5;
+      colorRange = 229.4;
       break;
     case 2:
       colorRange = 204;
