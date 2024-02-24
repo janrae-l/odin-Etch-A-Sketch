@@ -46,9 +46,9 @@ function hoverFunc() {
       console.log("IN");
 
       if (darkBtnClicks % 2 === 0) {
+        interaction = 0;
         tileChild.style.background = `rgb(${rColor}, ${gColor}, ${bColor})`;
       } else {
-        interaction = 0;
         interaction++;
         tileChild.style.background = `rgb(${darkenColor()}, ${darkenColor()}, ${darkenColor()})`;
       }
