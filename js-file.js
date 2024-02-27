@@ -6,6 +6,8 @@ let childDiv = document.createElement("div");
 let interaction = 0;
 let colorRange = 255;
 let darkBtnClicks = 0;
+let randColor = true;
+let darkClr = true;
 
 const randColorBtn = document.createElement("button");
 randColorBtn.setAttribute("type", "button", "class", "randomBtn");
@@ -19,6 +21,11 @@ darkColorBtn.textContent = "Darken Color";
 btnContainer.appendChild(darkColorBtn);
 
 darkColorBtn.addEventListener("click", function () {
+  /*randColorBtn.disabled = true;
+  darkColorBtn.disabled = true;
+  if (interaction >= 10) {
+    randColorBtn.disabled = false;
+  }*/
   darkBtnClicks++;
   console.log(darkBtnClicks);
   if (darkBtnClicks % 2 === 0) {
