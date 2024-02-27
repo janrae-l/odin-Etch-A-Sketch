@@ -7,6 +7,11 @@ let interaction = 0;
 let colorRange = 255;
 let darkBtnClicks = 0;
 
+const randColorBtn = document.createElement("button");
+randColorBtn.setAttribute("type", "button", "class", "randomBtn");
+randColorBtn.textContent = "Random Color";
+btnContainer.appendChild(randColorBtn);
+
 const darkColorBtn = document.createElement("button");
 darkColorBtn.setAttribute("type", "button");
 darkColorBtn.classList.add("darkColor");
