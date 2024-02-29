@@ -6,8 +6,8 @@ let childDiv = document.createElement("div");
 let interaction = 0;
 let colorRange = 255;
 let darkBtnClicks = 0;
-let randColor = true;
-let darkClr = true;
+let randColor = false;
+let darkClr = false;
 
 const randColorBtn = document.createElement("button");
 randColorBtn.setAttribute("type", "button", "class", "randomBtn");
@@ -21,25 +21,15 @@ darkColorBtn.textContent = "Darken Color";
 btnContainer.appendChild(darkColorBtn);
 
 darkColorBtn.addEventListener("click", function () {
-  /*randColorBtn.disabled = true;
-  darkColorBtn.disabled = true;
-  if (interaction >= 10) {
-    randColorBtn.disabled = false;
-  }*/
+  darkClr = true;
+  randColor = false;
   darkBtnClicks++;
-  console.log(darkBtnClicks);
-  if (darkBtnClicks % 2 === 0) {
-    console.log(false);
-  } else {
-    console.log(true);
-  }
+  console.log(darkClr, darkBtnClicks);
 });
 
-function progDarkColor() {
-  darkColorBtn.addEventListener("click", function () {
-    tileChild.style.background = `rgb(${darkenColor()}, ${darkenColor()}, ${darkenColor()})`;
-  });
-}
+randColorBtn.addEventListener("click", function () {
+  randColor = true;
+});
 
 function hoverFunc() {
   let hoverColor = document.querySelectorAll(".hover");
@@ -50,6 +40,21 @@ function hoverFunc() {
       let bColor = Math.floor(Math.random() * 255);
       console.log("IN");
 
+      if (randColor) {
+        interaction = 0;
+        tileChild.style.background = `rgb(${rColor}, ${gColor}, ${bColor})`;
+      } else if (darkClr) {
+        rColor = Math.floor(Math.random() * darkenColor());
+        gColor = Math.floor(Math.random() * darkenColor());
+        bColor = Math.floor(Math.random() * darkenColor());
+        console.log(interaction, rColor, gColor, bColor);
+
+        interaction++;
+        tileChild.style.background = `rgb(${rColor}, ${gColor}, ${bColor})`;
+      } else {
+        tileChild.style.background = "black";
+      }
+      /*
       if (darkBtnClicks % 2 === 0) {
         interaction = 0;
         tileChild.style.background = `rgb(${rColor}, ${gColor}, ${bColor})`;
@@ -62,11 +67,12 @@ function hoverFunc() {
         interaction++;
         tileChild.style.background = `rgb(${rColor}, ${gColor}, ${bColor})`;
       }
-    });
+    });*/
 
-    tileChild.addEventListener("mouseleave", () => {
-      console.log("OUT");
-      tileChild.style.background = "white";
+      tileChild.addEventListener("mouseleave", () => {
+        console.log("OUT");
+        tileChild.style.background = "white";
+      });
     });
   });
 }
