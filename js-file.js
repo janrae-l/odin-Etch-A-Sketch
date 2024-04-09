@@ -78,7 +78,7 @@ function hoverFunc() {
 }
 
 function makeGrid(number) {
-  const tileSides = 700 / number;
+  const tileSides = 680 / number;
   for (let i = 0; i < number * number; i++) {
     childDiv = document.createElement("div");
     childDiv.classList.add("childDiv");
